@@ -24,13 +24,10 @@ app.use(cors());
 app.use(json());
 app.use(router);
 const PORT = 5000
-var server_host = process.env.YOUR_HOST || '0.0.0.0';
+// var server_host = process.env.YOUR_HOST || '0.0.0.0';
 
 router.get('/', cors(corsOptions), tokenCachedMiddleware, tokensController)
 
 router.get('/:token/6', cors(corsOptions), sixHourCandleController, sixHourCandleCachedMiddleware)
 
 router.get('/:token/1', cors(corsOptions), oneHourCandleCachedMiddleware, oneHourCandleController)
-
-
-module.exports.handler = serverless(app);
