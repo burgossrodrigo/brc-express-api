@@ -177,7 +177,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/brc-express-api/dev/1683824261565-2023-05-11T16:57:41.565Z/brc-express-api.zip"
+                "S3Key": "serverless/brc-express-api/dev/1683824345940-2023-05-11T16:59:05.940Z/brc-express-api.zip"
               },
               "Handler": "index.handler",
               "Runtime": "nodejs18.x",
@@ -477,7 +477,7 @@
     "artifact": "C:\\Users\\rodri\\OneDrive\\Documentos\\GitHub\\brc-express-api\\.serverless\\brc-express-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/brc-express-api/dev/1683824261565-2023-05-11T16:57:41.565Z",
+    "artifactDirectoryName": "serverless/brc-express-api/dev/1683824345940-2023-05-11T16:59:05.940Z",
     "artifact": "brc-express-api.zip"
   }
 }
