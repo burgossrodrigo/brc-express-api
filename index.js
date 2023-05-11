@@ -3,61 +3,34 @@ const express = require("express");
 const cors = require('cors')
 const app = express();
 
-const { queryTokens } = require('./methods/CRUD')
-const { getCandlestickData } = require('./methods/index')
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5000'
+  ],
+};
+
+const json = bodyParse.json
+const router = express.Router()
+
+app.listen(PORT, () => {
+  console.log(`server is listening on port: ${PORT}`)
+})
+
+const { tokenCachedMiddleware, sixHourCandleCachedMiddleware, oneHourCandleCachedMiddleware } = require("./cache");
+const { tokensController, sixHourCandleController, oneHourCandleController } = require("./controller");
 
 app.use(cors());
+app.use(json());
+app.use(router);
+const PORT = 5000
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 
+router.get('/', cors(corsOptions), tokenCachedMiddleware, tokensController)
 
-app.get("/", async (req, res, next) => {
-  try {
-    const tokens = await queryTokens()
-    return res.status(200).json(tokens)
-  } catch (error) {
-    return res.status(400).json({
-      message: error.message
-    });
-  }
-});
+router.get('/:token/6', cors(corsOptions), sixHourCandleController, sixHourCandleCachedMiddleware)
 
-app.get("/:token/1", async (req, res, next) => {
-  try {
-    const name = req.params.token
-    const tokens = await queryTokens()
-    const tokenIndex = tokens.findIndex((entry) => entry.token === name)
-    const dataOfInterest = tokens[tokenIndex].price
-    const candleChart = getCandlestickData(dataOfInterest, 1)
-    return res.status(200).json(candleChart)
-  } catch (error) {
-    return res.status(400).json({
-      message: error.message
-    });
-  }
+router.get('/:token/1', cors(corsOptions), oneHourCandleCachedMiddleware, oneHourCandleController)
 
-});
-
-app.get("/:token/6", async (req, res, next) => {
-  try {
-    const name = req.params.token
-    const tokens = await queryTokens()
-    const tokenIndex = tokens.findIndex((entry) => entry.token === name)
-    const dataOfInterest = tokens[tokenIndex].price
-    const candleChart = getCandlestickData(dataOfInterest, 6)
-    return res.status(200).json(candleChart)
-  } catch (error) {
-    return res.status(400).json({
-      message: error.message
-    });
-  }
-
-});
-
-
-app.use((req, res, next) => {
-  //3600
-  return res.status(404).json({
-    error: "Not Found",
-  });
-});
 
 module.exports.handler = serverless(app);
