@@ -28,6 +28,6 @@ const PORT = 5000
 
 router.get('/', cors(corsOptions), tokenCachedMiddleware, tokensController)
 
-router.get('/:token/6', cors(corsOptions), sixHourCandleController, sixHourCandleCachedMiddleware)
+router.get('/:token/6', cors(corsOptions), sixHourCandleCachedMiddleware, sixHourCandleController)
 
 router.get('/:token/1', cors(corsOptions), oneHourCandleCachedMiddleware, oneHourCandleController)
