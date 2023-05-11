@@ -1,4 +1,4 @@
-export const getCandlestickData = (data, resolution) => {
+const getCandlestickData = (data, resolution) => {
     const ohlcData = []
     let currentOHLC = null
     // Sort the data by timestamp
@@ -46,4 +46,4 @@ export const getCandlestickData = (data, resolution) => {
     return ohlcData
   }
 
-  module.exports = getCandlestickData
+  module.exports = { getCandlestickData }

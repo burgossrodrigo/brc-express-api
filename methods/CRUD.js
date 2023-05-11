@@ -1,6 +1,6 @@
 const { MongoClient, ServerApiVersion } = require('mongodb')
 
-const uri = process.env.MONGODB_URI
+const uri = 'mongodb+srv://burgossrodrigo:BeREmhPli0p3qFTq@tangle.hkje2xt.mongodb.net/?retryWrites=true&w=majority'
 
 const mongoClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -13,3 +13,5 @@ const queryTokens = async () => {
         console.log(error.message, 'for queryTokens')
     }
 }
+
+module.exports = { queryTokens }

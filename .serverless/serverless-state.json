@@ -177,13 +177,13 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/brc-express-api/dev/1683824345940-2023-05-11T16:59:05.940Z/brc-express-api.zip"
+                "S3Key": "serverless/brc-express-api/dev/1683835229445-2023-05-11T20:00:29.445Z/brc-express-api.zip"
               },
               "Handler": "index.handler",
               "Runtime": "nodejs18.x",
               "FunctionName": "brc-express-api-dev-api",
               "MemorySize": 1024,
-              "Timeout": 6,
+              "Timeout": 300,
               "Environment": {
                 "Variables": {
                   "MONGODB_URI": "mongodb+srv://burgossrodrigo:BeREmhPli0p3qFTq@tangle.hkje2xt.mongodb.net/?retryWrites=true&w=majority"
@@ -200,14 +200,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionpYQHSvUpqyuOryE42w73jWfbM7GXQh6JFET8VS5T2s": {
+          "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "6K8Jm9wlO6LeOLuw5ihl8yMn3aXGSDPatbiu/VFpBgE="
+              "CodeSha256": "7q29phNoemsBx5ySvWlF9ddXSM9meiiZgQ2FuU58KcU="
             }
           },
           "HttpApi": {
@@ -315,7 +315,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionpYQHSvUpqyuOryE42w73jWfbM7GXQh6JFET8VS5T2s"
+              "Ref": "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo"
             },
             "Export": {
               "Name": "sls-brc-express-api-dev-ApiLambdaFunctionQualifiedArn"
@@ -445,6 +445,7 @@
     "functions": {
       "api": {
         "handler": "index.handler",
+        "timeout": 300,
         "events": [
           {
             "httpApi": "*",
@@ -454,10 +455,9 @@
         "name": "brc-express-api-dev-api",
         "package": {},
         "memory": 1024,
-        "timeout": 6,
         "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionpYQHSvUpqyuOryE42w73jWfbM7GXQh6JFET8VS5T2s"
+        "versionLogicalId": "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo"
       }
     },
     "configValidationMode": "warn",
@@ -477,7 +477,7 @@
     "artifact": "C:\\Users\\rodri\\OneDrive\\Documentos\\GitHub\\brc-express-api\\.serverless\\brc-express-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/brc-express-api/dev/1683824345940-2023-05-11T16:59:05.940Z",
+    "artifactDirectoryName": "serverless/brc-express-api/dev/1683835229445-2023-05-11T20:00:29.445Z",
     "artifact": "brc-express-api.zip"
   }
 }

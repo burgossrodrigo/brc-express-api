@@ -162,13 +162,13 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/brc-express-api/dev/1683824345940-2023-05-11T16:59:05.940Z/brc-express-api.zip"
+          "S3Key": "serverless/brc-express-api/dev/1683835229445-2023-05-11T20:00:29.445Z/brc-express-api.zip"
         },
         "Handler": "index.handler",
         "Runtime": "nodejs18.x",
         "FunctionName": "brc-express-api-dev-api",
         "MemorySize": 1024,
-        "Timeout": 6,
+        "Timeout": 300,
         "Environment": {
           "Variables": {
             "MONGODB_URI": "mongodb+srv://burgossrodrigo:BeREmhPli0p3qFTq@tangle.hkje2xt.mongodb.net/?retryWrites=true&w=majority"
@@ -185,14 +185,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersionpYQHSvUpqyuOryE42w73jWfbM7GXQh6JFET8VS5T2s": {
+    "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "6K8Jm9wlO6LeOLuw5ihl8yMn3aXGSDPatbiu/VFpBgE="
+        "CodeSha256": "7q29phNoemsBx5ySvWlF9ddXSM9meiiZgQ2FuU58KcU="
       }
     },
     "HttpApi": {
@@ -303,7 +303,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionpYQHSvUpqyuOryE42w73jWfbM7GXQh6JFET8VS5T2s"
+        "Ref": "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo"
       },
       "Export": {
         "Name": "sls-brc-express-api-dev-ApiLambdaFunctionQualifiedArn"
