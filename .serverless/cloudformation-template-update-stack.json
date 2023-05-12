@@ -162,7 +162,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/brc-express-api/dev/1683852557728-2023-05-12T00:49:17.728Z/brc-express-api.zip"
+          "S3Key": "serverless/brc-express-api/dev/1683916134574-2023-05-12T18:28:54.574Z/brc-express-api.zip"
         },
         "Handler": "index.handler",
         "Runtime": "nodejs18.x",
@@ -185,14 +185,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersiong628Qvcj4kKeuPgFqhBTBj5ej8zCtEwHGnM6oA7wPE": {
+    "ApiLambdaVersionV94vfcQSg5pbMWdjRcBcZJkx2ImSnSMnyYl52QQNI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "SyCCLXhpOjDAd8TlV6/9JfyKxXeg8/I6c8yORuSarG8="
+        "CodeSha256": "4kvdk+PDQNL/nANhgDKICOANKn8wjdudpbg44L+X7cM="
       }
     },
     "HttpApi": {
@@ -303,7 +303,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersiong628Qvcj4kKeuPgFqhBTBj5ej8zCtEwHGnM6oA7wPE"
+        "Ref": "ApiLambdaVersionV94vfcQSg5pbMWdjRcBcZJkx2ImSnSMnyYl52QQNI"
       },
       "Export": {
         "Name": "sls-brc-express-api-dev-ApiLambdaFunctionQualifiedArn"
