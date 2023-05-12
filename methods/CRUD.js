@@ -6,12 +6,13 @@ const mongoClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopo
 
 const queryTokens = async () => {
     try {
-        const collection = await mongoClient.db("BRC").collection("tokens");
-        const documents = await collection.find({}).toArray();
-        return documents;
+      const collection = await mongoClient.db("BRC").collection("tokens");
+      const documents = await collection.find({}).limit(50).toArray();
+      return documents;
     } catch (error) {
-        console.log(error.message, 'for queryTokens')
+      console.log(error.message, 'for queryTokens');
+      return [];
     }
-}
+  };
 
 module.exports = { queryTokens }

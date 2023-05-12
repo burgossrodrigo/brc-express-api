@@ -1,13 +1,18 @@
 const serverless = require("serverless-http");
 const express = require("express");
 const cors = require('cors')
+const bodyParse = require('body-parser')
 const app = express();
+
+const json = bodyParse.json
+const router = express.Router()
 
 const { queryTokens } = require('./methods/CRUD')
 const { getCandlestickData } = require('./methods/index')
 
 app.use(cors());
-
+app.use(json());
+app.use(router);
 
 app.get("/", async (req, res, next) => {
   try {
@@ -50,14 +55,6 @@ app.get("/:token/6", async (req, res, next) => {
     });
   }
 
-});
-
-
-app.use((req, res, next) => {
-  //3600
-  return res.status(404).json({
-    error: "Not Found",
-  });
 });
 
 module.exports.handler = serverless(app);

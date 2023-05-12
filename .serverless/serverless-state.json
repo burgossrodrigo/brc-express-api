@@ -177,7 +177,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/brc-express-api/dev/1683835229445-2023-05-11T20:00:29.445Z/brc-express-api.zip"
+                "S3Key": "serverless/brc-express-api/dev/1683852557728-2023-05-12T00:49:17.728Z/brc-express-api.zip"
               },
               "Handler": "index.handler",
               "Runtime": "nodejs18.x",
@@ -200,14 +200,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo": {
+          "ApiLambdaVersiong628Qvcj4kKeuPgFqhBTBj5ej8zCtEwHGnM6oA7wPE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "7q29phNoemsBx5ySvWlF9ddXSM9meiiZgQ2FuU58KcU="
+              "CodeSha256": "SyCCLXhpOjDAd8TlV6/9JfyKxXeg8/I6c8yORuSarG8="
             }
           },
           "HttpApi": {
@@ -315,7 +315,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo"
+              "Ref": "ApiLambdaVersiong628Qvcj4kKeuPgFqhBTBj5ej8zCtEwHGnM6oA7wPE"
             },
             "Export": {
               "Name": "sls-brc-express-api-dev-ApiLambdaFunctionQualifiedArn"
@@ -457,7 +457,7 @@
         "memory": 1024,
         "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionhHFUbtwZMwVPh2ihJDnw0gP1EOS4lTsb9UlLRBehqo"
+        "versionLogicalId": "ApiLambdaVersiong628Qvcj4kKeuPgFqhBTBj5ej8zCtEwHGnM6oA7wPE"
       }
     },
     "configValidationMode": "warn",
@@ -477,7 +477,7 @@
     "artifact": "C:\\Users\\rodri\\OneDrive\\Documentos\\GitHub\\brc-express-api\\.serverless\\brc-express-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/brc-express-api/dev/1683835229445-2023-05-11T20:00:29.445Z",
+    "artifactDirectoryName": "serverless/brc-express-api/dev/1683852557728-2023-05-12T00:49:17.728Z",
     "artifact": "brc-express-api.zip"
   }
 }
